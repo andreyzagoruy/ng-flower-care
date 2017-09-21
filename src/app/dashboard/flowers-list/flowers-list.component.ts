@@ -12,6 +12,7 @@ export class FlowersListComponent implements OnInit {
   ngOnInit() {
   }
 
-  flowers = [{name: "Daisy"}];
+  flowers = [{name: "Daisy"},
+             {name: "Rose"}];
 
 }
