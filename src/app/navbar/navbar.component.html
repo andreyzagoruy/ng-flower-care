@@ -1,3 +1,4 @@
-<p>
-  navbar works!
-</p>
+<div class="leftSide">
+    <h1 *ngIf="isLoggedIn | async; else notLoggedIn">Welcome {{ name }}!</h1>
+    <ng-template #notLoggedIn><h1>Please, log in</h1></ng-template>
+</div>
