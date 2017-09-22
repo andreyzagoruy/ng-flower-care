@@ -1,18 +1,9 @@
-<headbar>
+<headbar
+  [name]="(auth.currentUser)?.displayName"
+  [isLoggedIn]="auth.getAuthState()">
 </headbar>
 <main>
     <router-outlet></router-outlet>
 </main>
-<navbar
-  [name]="(auth.currentUser)?.displayName"
-  [isLoggedIn]="auth.getAuthState()">
+<navbar>
 </navbar>
-<h1 *ngIf="auth.currentUser">Auth state {{ auth.getAuthState() }}!</h1>
-<button
-(click)="logOut()">
-Log out
-</button>
-<flower-add>
-</flower-add>
-<flowers-list>
-</flowers-list>

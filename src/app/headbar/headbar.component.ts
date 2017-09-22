@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { AuthService } from '../shared/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'headbar',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeadbarComponent implements OnInit {
 
-  constructor() { }
+  @Input() name;
+  @Input() isLoggedIn;
+
+  constructor(private auth: AuthService, private router: Router) { }
 
   ngOnInit() {
+  }
+
+  logOut() {
+    this.auth.logOut();
+    this.router.navigate(['/login']);
   }
 
 }

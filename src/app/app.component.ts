@@ -21,12 +21,4 @@ export class AppComponent implements OnInit {
         (user) => this.user = user);
   }
 
-  loginWithGoogle() {
-    this.auth.loginWithGoogle();
-  }
-
-  logOut() {
-    this.auth.logOut();
-  }
-
 }

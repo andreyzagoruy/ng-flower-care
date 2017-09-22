@@ -1,3 +1,11 @@
-<p>
-  headbar works!
-</p>
+<div class="leftSide">
+    <h1 *ngIf="isLoggedIn | async; else notLoggedIn">{{ name }}</h1>
+    <ng-template #notLoggedIn><h1>Welcome</h1></ng-template>
+</div>
+<div class="rightSide">
+  <button
+    *ngIf="isLoggedIn | async"
+    (click)="logOut()">
+      Log out
+    </button>
+</div>

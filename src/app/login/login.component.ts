@@ -12,17 +12,10 @@ export class LoginComponent implements OnInit {
   constructor( public auth: AuthService, private router: Router ) { }
 
   ngOnInit() {
-    if (this.auth.currentUser) {
-      this.redirect()
-    };
   }
 
   loginWithGoogle() {
     this.auth.loginWithGoogle();
-    this.redirect();
-  }
-
-  redirect() {
     this.router.navigate(['/dashboard']);
   }
 }
