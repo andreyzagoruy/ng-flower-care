@@ -1,3 +1,22 @@
-<p>
-  flower-add works!
-</p>
+<h2>Add</h2>
+
+<form (submit)="addFlower(today, dayWatering, lastWatering)">
+  <input [(ngModel)]="flowerName" type="text" name="flowerName" placeholder="Flower name" required>
+  <select name="oldWatering" [(ngModel)]="oldWatering" required>
+    <option value="00" disabled>The last watering</option>
+    <option value="0">today</option>
+    <option value="1">one day ago</option>
+    <option value="2">two days ago</option>
+    <option value="3">three days ago</option>
+    <option value="4">four days ago</option>
+  </select>
+  <select name="nextWatering" [(ngModel)]="nextWatering" required>
+    <option value="00" disabled>next watering</option>
+    <option value="0">today</option>
+    <option value="1">one day</option>
+    <option value="2">two days</option>
+    <option value="3">three days</option>
+    <option value="4">four days</option>
+  </select>
+  <button type="submit">add Flower</button>
+</form>

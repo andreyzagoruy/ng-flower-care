@@ -4,12 +4,14 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { RouterModule, Routes } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { FlowersListComponent } from './dashboard/flowers-list/flowers-list.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FlowerAddComponent } from './flower/flower-add/flower-add.component';
 import { AuthService } from './shared/auth.service';
+import { DatabaseService } from './shared/database.service';
 import { firebaseConfig } from './firebase-config';
 import { HeadbarComponent } from './headbar/headbar.component';
 import { LoginComponent } from './login/login.component';
@@ -20,6 +22,7 @@ const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'flowers', component: FlowersComponent },
+  { path: 'flowers/add', component: FlowerAddComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full'}
 ];
 
@@ -36,6 +39,7 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     RouterModule.forRoot(
       appRoutes
     ),
@@ -43,7 +47,7 @@ const appRoutes: Routes = [
     AngularFireDatabaseModule,
     AngularFireAuthModule
   ],
-  providers: [AuthService],
+  providers: [AuthService, DatabaseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

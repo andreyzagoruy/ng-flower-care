@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { DatabaseService } from '../../shared/database.service';
 
 @Component({
   selector: 'flower-add',
@@ -7,14 +8,15 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class FlowerAddComponent implements OnInit {
 
-  @Input() flowerName = "";
-  @Input() oldWatering = "00";
-  @Input() nextWatering = "00";
-  @Input() today = new Date();
-  @Input() dayWatering = new Date();
-  @Input() lastWatering = new Date();
 
-  constructor() { }
+  flowerName = "";
+  oldWatering = "00";
+  nextWatering = "00";
+  today = new Date();
+  dayWatering = new Date();
+  lastWatering = new Date();
+
+  constructor(private db: DatabaseService) { }
 
   ngOnInit() {
   }
@@ -37,7 +39,8 @@ export class FlowerAddComponent implements OnInit {
       }
     ];
 
-  addFlower(today, dayWatering, lastWatering) {
+  addFlower(today, dayWatering, lastWatering, flowerName, oldWatering, nextWatering) {
+    /*
     this.flowers.push({
       flowerName: this.flowerName,
       oldWatering: lastWatering.setDate(today.getDate() -  Number(this.oldWatering)) ,
@@ -46,5 +49,7 @@ export class FlowerAddComponent implements OnInit {
     this.flowerName = '';
     this.oldWatering = '00';
     this.nextWatering = '00';
+    */
+    this.db.addFlower(today, dayWatering, lastWatering, flowerName, oldWatering, nextWatering);
   }
 }

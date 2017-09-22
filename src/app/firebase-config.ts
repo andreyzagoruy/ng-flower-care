@@ -1,8 +1,8 @@
 export const firebaseConfig = {
-  apiKey: "AIzaSyAse466LcVJn41mXLuBWRCVSTxeAY6t93A",
-  authDomain: "flower-care.firebaseapp.com",
-  databaseURL: "https://flower-care.firebaseio.com",
-  projectId: "flower-care",
-  storageBucket: "flower-care.appspot.com",
-  messagingSenderId: "204783111740"
+  apiKey: "AIzaSyBLWwTKAkXO9ysCycXUl2N4yeVnj2E39VI",
+  authDomain: "firechat-messaging.firebaseapp.com",
+  databaseURL: "https://firechat-messaging.firebaseio.com",
+  projectId: "firechat-messaging",
+  storageBucket: "firechat-messaging.appspot.com",
+  messagingSenderId: "190990575111"
 }

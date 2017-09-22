@@ -15,8 +15,12 @@ export class DatabaseService {
       .subscribe(flowers => this.flowers = flowers);
   }
 
-  addFlower(){
-    
+  addFlower(today, dayWatering, lastWatering, flowerName, oldWatering, nextWatering){
+    this.flowers.push({
+      flowerName: flowerName,
+      oldWatering: lastWatering.setDate(today.getDate() -  Number(oldWatering)) ,
+      nextWatering: dayWatering.setDate(today.getDate()+ Number(nextWatering))
+    });
   }
 
 }
